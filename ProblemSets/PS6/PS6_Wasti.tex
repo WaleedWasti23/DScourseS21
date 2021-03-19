@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bottom]{footmisc}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true, %Colours links instead of ugly boxes
+urlcolor=blue, %Colour for external hyperlinks
+linkcolor=blue, %Colour of internal links
+citecolor=blue %Colour of citations
+}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage[english]{babel}
+\usepackage[margin=1in,includefoot]{geometry}
+
+
+
+\setlength\parindent{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Syed Waleed Mehmood Wasti}
+\lhead{DScourseS21 - PS 6}
+\cfoot{\thepage}
+
+
+
+\title{\textbf{Data Science for Economists - Spring 21 \\
+\vspace{0.5cm}
+Problem Set 6}}
+\author{Syed Waleed Mehmood Wasti}
+\date{March 18, 2021}
+
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\begin{enumerate}
+\item
+Done. 
+
+\item
+Done. It is up to date. 
+
+\item
+The figure that I am plotting in this exercise shows the correlation between corruption and human development for all the countries. 
+
+Graph source: \href{http://www.economist.com/node/21541178}{Corrosive corruption}
+
+The data is already cleaned so I just started off by plotting the data. 
+
+\item
+
+Below are the figures in order. First I plot the scatter for all the countries as below: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{scatter_cpi_hdi.png}
+    \caption{Scatter Plot}
+    \label{fig:scatter}
+\end{figure}
+
+
+Then, I show the trend line in it: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{scatter_trend.png}
+    \caption{Scatter plot with trend line}
+    \label{fig:scatter_trend}
+\end{figure}
+
+
+And finally I include labels of countries for many of the observations and provide a different color label to different regions. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{final_graph.png}
+    \caption{Final graph of correlation between corruption and human development}
+    \label{fig:final}
+\end{figure}
+
+
+\end{enumerate}
+
+
+These images are showing the relationship between corruption and human development. It can be seen that the relationship is inverse. A high corruption perception index (CPI) where 10 = least corrupt correlates with a high human development index (HDI). This is intuitive and makes sense. Countries with high human development are expected to have a low corruption perception and vice versa. 
+
+
+
+
+
+
+\end{document}
