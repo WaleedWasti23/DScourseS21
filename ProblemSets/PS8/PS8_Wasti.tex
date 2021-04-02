@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bottom]{footmisc}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true, %Colours links instead of ugly boxes
+urlcolor=blue, %Colour for external hyperlinks
+linkcolor=blue, %Colour of internal links
+citecolor=blue %Colour of citations
+}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage[english]{babel}
+\usepackage[margin=1in,includefoot]{geometry}
+
+
+
+\setlength\parindent{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Syed Waleed Mehmood Wasti}
+\lhead{DScourseS21 - PS 8}
+\cfoot{\thepage}
+
+
+
+\title{\textbf{Data Science for Economists - Spring 21 \\
+\vspace{0.5cm}
+Problem Set 8}}
+\author{Syed Waleed Mehmood Wasti}
+\date{April 02, 2021}
+
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+
+\begin{enumerate}
+
+
+\item
+Done
+
+\item
+Done
+
+\item
+Done
+
+\item
+Done
+
+\item
+The estimated value, $\hat{\beta}_{OLS}$ is quite similar to the true value of $\beta$. In fact it is exactly the same if we round $\hat{\beta}_{OLS}$ off to 2 decimal places. 
+
+\item
+Done
+
+\item
+Yes. The values for both estimates are different. The $\hat{\beta}_{OLS} $ using \verb|nloptr|’s L-BFGS algorithm is pretty close to the true $\beta$. 
+
+\item
+Done
+
+
+\newpage
+
+\item
+
+These estimates of $\beta$ using \verb|lm()| are pretty close to the ``ground truth" $\beta$ that we used to create the data in (1). To be precise they are exactly the same when rounded off to 1 decimal place. 
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}[t]{|l|c|}
+\toprule
+  \hline & Model 1\\ \hline
+\midrule
+X1 & 1.501\\
+ & (0.002)\\
+X2 & -0.991\\
+ & \vphantom{8} (0.003)\\
+X3 & -0.247\\
+ & \vphantom{7} (0.003)\\
+X4 & 0.744\\
+ & \vphantom{6} (0.003)\\
+X5 & 3.504\\
+ & \vphantom{5} (0.003)\\
+X6 & -1.999\\
+ & \vphantom{4} (0.003)\\
+X7 & 0.502\\
+ & \vphantom{3} (0.003)\\
+X8 & 0.997\\
+ & \vphantom{2} (0.003)\\
+X9 & 1.256\\
+ & \vphantom{1} (0.003)\\
+X10 & 1.999\\
+ & (0.003)\\
+\midrule
+Num.Obs. & 1e+05\\
+R2 & 0.971\\
+R2 Adj. & 0.971\\
+AIC & 144993.2\\
+BIC & 145097.9\\
+Log.Lik. & -72485.615\\
+F & 338240.012\\ \hline
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\end{document}
