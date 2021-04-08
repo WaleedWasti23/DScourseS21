@@ -25,7 +25,7 @@ mgoals
 
 endpoint = "series/observations"
 params = list(
-  api_key= "a45745d8d3d7dbfdcc8e3ca42e48c1b0", ## Change to your own key
+  api_key= "#put in your API key#", ## Change to your own key
   file_type="json", 
   series_id="UNRATE"
 )
