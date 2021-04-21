@@ -254,7 +254,7 @@ print('Starting KNN')
 tune_knn_spec <- nearest_neighbor(
   neighbors = tune() # tuning parameter
 ) %>% 
-  set_engine("kknn") %>%
+  set_engine("knn") %>%
   set_mode("classification")
 
 # define a set over which to try different values of the regularization parameter (number of neighbors)
@@ -272,7 +272,7 @@ rec_wf_knn <- workflow() %>%
 # Tuning results
 rec_res_knn <- rec_wf_knn %>%
   tune_grid(
-    resamples = rec_folds_T,
+    resamples = rec_folds_knn,
     grid = knn_parm_df
   )
 
