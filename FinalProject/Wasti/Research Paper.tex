@@ -1,0 +1,236 @@
+\documentclass[12pt]{article}
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[bottom]{footmisc}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true, %Colours links instead of ugly boxes
+urlcolor=red, %Colour for external hyperlinks
+linkcolor=blue, %Colour of internal links
+citecolor=blue %Colour of citations
+}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage[english]{babel}
+\usepackage[margin=1in,includefoot]{geometry}
+\usepackage[backend=biber,style=apa,sorting=ynt]{biblatex}
+
+\addbibresource{mybibliography.bib}
+
+
+
+
+\setlength\parindent{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Syed Waleed Mehmood Wasti}
+\lhead{Research Paper}
+\cfoot{\thepage}
+
+
+
+\title{\textbf{How relaxation in SNAP eligibility impacts self-employment}}
+\author{Syed Waleed Mehmood Wasti}
+\date{\today}
+
+
+\begin{document}
+\begin{titlingpage}
+\maketitle
+\begin{abstract}
+\noindent 
+I intend to find the impact of a change in policy on self-employment levels within the U.S. over the years 1996-2020. SNAP eligibility criteria was relaxed in 2000 and individuals 200\% below the Federal Poverty Line (FPL) were now eligible for SNAP as compared to those 130\% below FPL before 2000.  Difference-in-difference estimation is used to estimate this impact. The data for SNAP and self-employment is taken from IPUMS CPS database. I expect to find an increase in self-employment once there is an increase in the eligibility of SNAP participants. I also intend to study how an increase in SNAP eligibility impacts necessity-driven and opportunity-driven entrepreneurship separately. This could have important implications. 
+ 
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+
+\newpage
+
+
+\addcontentsline{toc}{section}{Introduction}
+\section*{Introduction}
+
+SNAP (Supplemental Nutrition Assistance Program) has been found to be quite beneficial for participants. There is significant amount of research that has been done on studying the impact of SNAP on the health and incomes of the recipients (\cite{tiehen2012alleviating}; \cite{hoynes2017real}; \cite{bartfeld2015snap}), however, not much research has been done that details how the take-up of SNAP impacts the poor households in terms of their entrepreneurial attributes.\\ 
+
+Although there is some research that studies the impact that increasing eligibility of SNAP recipients has on the number of firms started and the number of listed companies formed (\cite{olds2016food}), to my knowledge no paper specifically studies how opportunity-driven entrepreneurship increases if more individuals are enrolled in SNAP. \\
+
+Poorer households are focused on working so that they can just earn enough to live another day and their utmost priority is only to put food on the table while their incomes are more often than not irregular and highly unpredictable (\cite{collins2009portfolios}). I believe that once their need of food is satisfied, they would be able and willing to think and come up with new and innovative ideas. Thus, this would cause them to transition from necessity-driven entrepreneurship towards opportunity-driven entrepreneurship. \\
+
+The reason why I want to differentiate between necessity and opportunity-driven entrepreneurship is the following. \cite{kautonen2010impact} find that necessity-driven entrepreneurship negatively impacts the desire of the individual to remain self-employed, compared to returning to paid employment.   \\
+
+Opportunity-driven entrepreneurship is not just beneficial for the individuals in the long-run but it can also have trickle down effects on the development of the economy in terms of higher earnings for that sector and more jobs being created in the long run. There are a lot of studies that find opportunity-driven entrepreneurship to have a significant positive impact on the economic growth of the countries (\cite{rodrigues2018impact}; \cite{stoica2020nexus}). Opportunity-driven entrepreneurship is also considered to structurally transform both traditional and modern sectors through innovation and by increasing productivity and employment (\cite{gries2010entrepreneurship}). \\
+
+
+
+\cite{olds2016food} is closest to the topic of this paper. That paper studies the effect of SNAP eligibility on business ownership. It particularly focuses on the expansion of SNAP threshold levels beginning in mid-2000s and how that affects self-employment rates as well as inception of incorporated firms. I plan to extend that paper by including more recent years trying to gauge whether such a policy change has a long-term impact. Furthermore, \cite{olds2016food} studies how increased SNAP eligibility impacts creation of new firms but does not specifically study the impact on opportunity-driven entrepreneurship. This is something that I plan to study.  \\
+
+I intend to study how a change in SNAP eligibility through relaxing credit constraints impacts the participants in terms of their entrepreneurial ventures. The idea is simple. Households that are very poor are vulnerable and suffer from food insecurity. They have to provide food to their families and even earning just enough in order to take home sufficient food is an uphill battle. The primary target each day as they set out to work (in most cases) is to earn just enough to feed themselves and their families. This is, therefore, their sole concern and the only thing that their mind is occupied with. They may, thus, be ``forced" to work and employ themselves for the purposes of providing something to the table. This gives rise to necessity-driven entrepreneurship (as defined by the Global Entrepreneurship Monitor (GEM). The poor are only driven by their need to survive and therefore start ventures that are neither novel nor creative (in most cases). \\
+
+I believe, and this is the hypothesis that I want to test, that if they are relieved of these duties, then that would enable them to think independently and creatively. It would help them explore various ways in which they can earn themselves a living rather than focusing on the food; something they are already provided with, by the government. This may enable them to start ventures based on opportunity - to tap onto an opportunity that they see in the market. This is defined as opportunity-driven entrepreneurship by GEM. \\
+
+Thus, what I propose is the following. An increase in the individuals eligible for SNAP is likely to increase the self-employment (and probably opportunity-driven entrepreneurship in the U.S.) \\
+
+
+The rest of the paper is organized as follows. I start with the literature review which is followed by the section on Opportunity Entrepreneurship and SNAP take-up trends. This is followed by a section that describes the data. I then present the proposed model and move on to sharing some initial results from the estimation carried out. That is followed by conclusion which talks about some of the limitations of this paper and scope for future research. \\
+
+
+\addcontentsline{toc}{section}{Literature Review}
+\section*{Literature Review}
+
+A brief explanation of public assistance programs and their types as defined by the U.S. census webiste is provided below: \\
+
+``Public assistance refers to assistance programs that provide either cash assistance or in-kind benefits to individuals and families from any governmental entity. There are two major types of public assistance programs; social welfare programs and social insurance programs. Benefits received from social welfare programs are usually based on a low income means-tested eligibility criteria. \\
+
+Some of the major federal, state, and local social welfare programs are:
+\begin{itemize}
+\item Supplemental Security Income (SSI)
+\item Supplemental Nutrition Assistance Program (SNAP)
+\item Special Supplemental Nutrition Program for Women, Infants, and Children (WIC)
+\item Temporary Assistance for Needy Families (TANF), including Pass through Child Support
+\item General Assistance (GA) \\
+\end{itemize}
+
+Benefits received from social insurance programs are usually based on eligibility criteria such as age, employment status, or being a veteran."\footnote{Source: https://www.census.gov/topics/income-poverty/public-assistance/about.html}\\
+
+
+Although public assistance programs in the past have been termed as the most controversial social welfare problems within the USA (\cite{Young1987}), recently there has been a significant increase in the uptake of such programs. \cite{schayek2011impact} find that a greater amount of public assistance in both qualitative as well as quantitative terms is likely to have a positive impact on performance of small businesses. Thus, if we account for the improved quality of the assistance, that does translate into improved performance.  \\
+
+One program in particular that has been growing and improving the lives of the participants is the food stamps program called SNAP (\cite{bartfeld2015snap}). In fact,``SNAP is the cornerstone of food assistance in the United States, serving one in seven Americans in FY2015 at a cost of \$74 billion'' (\cite{ziliak2016modernizing}). SNAP is proven to have a positive impact on the macroeconomic variables; \cite{canning2019supplemental} find that if SNAP benefits are increased by \$1 billion, then that is expected to increase GDP by around \$1.5 billion (a multiplier of 1.5) - however, their model is most appropriate for a slowing economy.     \\
+
+How SNAP benefits the poor and whether it actually benefits them, then, is the next question. \cite{daponte1999low} do a good job in explaining this phenomena in detail. They find that many of the eligible households that do not participate in the food stamp program would only receive modest monthly benefits even if they did enroll. They find that median monthly benefit was only around \$39 for eligible non-participants as compared to \$150 for the sample of households already enrolled and receiving the benefits. Thus, SNAP actually does improve the well-being of the participants.  \\
+
+
+The impact of food insecurity on the entrepreneurial aspects of the individuals is less studied, however, it is found to reduce education levels among adolescents due to sickness, high absenteeism, poor academic performance and social functioning, as well as behavioral issues (\cite{frongillo2006food} ; \cite{jyoti2005food}; \cite{rose2008household}). \cite{tiehen2012state} find that the effectiveness of SNAP in improving the lives of the low-income households is impacted by the state policy choices. \cite{belachew2011food} find that adolescents who are food insecure complete lesser years of schooling compared to those who are not. \\
+
+Food insecurity may impact the health behavior of college students beyond the college years and therefore the impact may not be limited to the individual and may carry over to state or even national level (in the long-run) (\cite{el2019prevalence}). Since food insecurity has such negative impacts on the health, social interactions, and education of the individuals, I believe food insecurity is bound to hamper the innovativeness and critical thinking abilities of the individuals as well.  \\
+
+Although \cite{olds2016food} studies how increasing SNAP eligibility increases the likelihood of individuals to own a business, the results are driven completely by non-enrollees who became newly eligible. Thus, there exists a gap in literature that studies the effects of food stamps on the entrepreneurial abilities of the recipients of SNAP. \\
+
+
+
+\addcontentsline{toc}{section}{Opportunity Entrepreneurship trend}
+\section*{Opportunity Entrepreneurship Trend}
+
+Figure \ref{fig:ose} shows the trend for opportunity share of entrepreneurs for the U.S. over the years 1996-2019. It can be observed that the opportunity share of entrepreneurs generally has an upward trend apart from the blips that it experienced around 2002 and 2009. We can also observe that this share has increased over the years from a value of around 0.8 in 1996 to a value of around 0.86 in 2019. \\  
+
+
+
+
+
+
+
+
+
+
+\addcontentsline{toc}{section}{Data}
+\section*{Data}
+
+In this paper I intend to study how relaxation in SNAP eligibility affects self-employment levels within the U.S. IPUMS CPS basic monthly data from 1996-2020 has been used. CPS matching has been performed to link the data for individuals across periods in order to provide panel data for estimation. The individuals surveyed in CPS are rotated across periods therefore it was important to match the data of individuals across different months.     \\
+
+
+For opportunity-driven entrepreneurship and necessity-driven entrepreneurship new variables have been constructed using this very IPUMS CPS data.  Opportunity-driven entrepreneurs are individuals who were employed in a prior period but then switched to self-employment later. Necessity-driven entrepreneurs are those who were unemployed in a prior period but then switched to self=employment later on. These distinctions are important because it is likely that those who are unemployed just need to get started and are driven by necessity to earn a living in order to start a venture. However, those who are already employed do not have a reason to leave the job market for self-employment unless they see an ``opportunity" that they expect to take the benefit of. 
+\\ 
+
+One of the main reasons why panel data is preferred to national-level time series data is that at a national level, the local level variability is ignored (\cite{levitt2001alternative}). \\
+
+
+
+
+
+\addcontentsline{toc}{section}{Model}
+\section*{Methods}
+
+The difference-in-difference method that I propose is as follows: \\
+
+{\small 
+\begin{equation}
+\mathit{Y}_{ist} = \beta_0 + \beta_1 ~ \mathit{Treat}_{it} + \beta_2 ~ \mathit{Post}_{st} + \beta_3 ~ \mathit{Treat}_{it} \mathit{Post}_{st} + \xi X_{it} + \nu_s  + \eta_t + (a_i + \epsilon_{it})
+\end{equation}}  \\
+
+
+for individual \(i \) in state $s$ at time $t$, where $Y_{ist}$ is self-employment (or necessity-driven entrepreneurship or opportunity-driven entrepreneurship).   \\
+
+
+``Treatment status $Treat_{it} = 1[Inc_{it} \leq Thresh_{st}] $ and uses a household’s combined income to determine eligibility; this variable is only defined for households above the previous cut-off of 130\% FPL. The variable $Post_{st} = 1[t \geq PolicyYear_s]$, indicating whether an observation is before or after the policy’s enacting. The parameters $\nu_s$ and $\eta_t$ are state and year fixed effects, and $X_{it}$ is a vector of
+covariates. The difference-in-difference estimator of the effect of the expansion is $\beta_3$." \cite{olds2016food} 
+
+
+
+
+\addcontentsline{toc}{section}{Proposed Results}
+\section*{Findings} 
+
+I propose that increased SNAP eligibility is likely to have a positive impact on the self-employment levels and may be even opportunity share of entrepreneurship. Those who are eligible for SNAP benefits are more likely to think independently and creatively and start ventures that exploit some opportunity in the market. \\
+
+The regression results in figure 2 show that an the treatment group post the policy change is more likely to increase opportunity-driven entrepreneurship. \\
+
+
+
+\newpage
+\addcontentsline{toc}{section}{Conclusion}
+\section*{Conclusion}
+
+Some of the limitations of this study are that due to the unavailability of state-wise data on opportunity-driven entrepreneurship provided by GEM, we use the IPUMS CPS data to construct opportunity-driven entrepreneurship variables which may not be quite accurate. \\
+
+Future research could study the long-term impacts with respect to entrepreneurship on the recipients of SNAP and compare the different groups (age-wise, gender-wise) to find which subgroup of the recipients contributes the most to opportunity-driven entrepreneurship. \\
+
+\newpage
+\section*{Appendix}
+
+\textbf{FIGURES}
+\begin{figure}[H]
+    \centering
+    \includegraphics{OSE.jpg}
+    \caption{Opportunity share of new entrepreneurs (1996-2019)}
+    \label{fig:ose}
+\end{figure} \\
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{Reg_result.png}
+    \caption{Basic Regression Results}
+    \label{fig:my_label}
+\end{figure}
+
+
+
+\newpage
+\textbf{TABLE}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+        Persons in family & FPL Rate \\
+        1 & \$12880 \\
+        2 & \$17420 \\
+        3 & \$21960 \\
+        4 & \$26500 \\
+        5 & \$31040 \\
+        6 & \$35580 \\
+        6 & \$40120 \\
+        7 & \$44660 \\
+    \end{tabular}
+    \caption{2021 FPL Values}
+    \label{tab:my_label}
+\end{table}
+
+
+
+
+
+\newpage
+\printbibliography[heading=bibintoc,title={Bibliography}] 
+
+
+\end{titlingpage}
+\end{document}
